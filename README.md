@@ -1,7 +1,7 @@
 # SmartCity-Platform (Bài dự thi PMNM 2025)
 
-**Đội:** [Tên Đội Của Bạn]  
-**Trường:** [Tên Trường Của Bạn]
+**Đội:** Haui-HIT-NhoNguoiYeuCu
+**Trường:** Trường Công Nghệ Thông Tin và Truyền Thông (SICT) - Đại Học Công Nghiệp Hà Nội
 
 [![Documentation](https://img.shields.io/badge/Documentation-View_Site-blue?style=for-the-badge)](https://Haui-HIT-NhoNguoiYeuCu.github.io/SmartCity-Platform/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-yellow.svg?style=for-the-badge)](./LICENSE)

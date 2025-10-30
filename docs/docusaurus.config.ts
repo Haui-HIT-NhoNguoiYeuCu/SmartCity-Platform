@@ -8,10 +8,10 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   url: "https://Haui-HIT-NhoNguoiYeuCu.github.io",
-  baseUrl: "/open-linked-hub/",
+  baseUrl: "/SmartCity-Platform/",
 
   organizationName: "Haui-HIT-NhoNguoiYeuCu",
-  projectName: "open-linked-hub",
+  projectName: "SmartCity-Platform",
 
   onBrokenLinks: "throw",
   i18n: {
