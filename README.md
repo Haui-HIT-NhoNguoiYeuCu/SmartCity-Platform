@@ -1,7 +1,7 @@
 # SmartCity-Platform (Bài dự thi PMNM 2025)
 
-**Đội:** [Tên Đội Của Bạn]
-**Trường:** [Tên Trường Của Bạn]
+**Đội:** Haui-HIT-NhoNguoiYeuCu
+**Trường:** Trường Công Nghệ Thông Tin và Truyền Thông (SICT) - Đại Học Công Nghiệp Hà Nội
 
 Bài dự thi Xây dựng ứng dụng thành phố thông minh dựa trên nền tảng dữ liệu mở.
 
