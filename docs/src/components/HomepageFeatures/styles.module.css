@@ -1,0 +1,195 @@
+@keyframes gradientBG {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+.features {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 6s ease infinite;
+  color: #e6f1ff;
+  overflow: hidden;
+  width: 100%;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: -50px; /* Start slightly above to prevent gap during animation */
+  left: 0;
+  right: 0;
+  bottom: -50px; /* Extend below to prevent gap during animation */
+  background: 
+    linear-gradient(90deg, #00f5ff11 1px, transparent 1px) 0 0 / 50px 50px,
+    linear-gradient(0deg, #00f5ff11 1px, transparent 1px) 0 0 / 50px 50px;
+  pointer-events: none;
+  animation: gridMove 1s linear infinite;
+}
+
+/* Add a radial gradient overlay for more tech feel */
+.features::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at top, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at bottom, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.featuresHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.featuresTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.featuresSubtitle {
+  font-size: 1.1rem;
+  color: #8892b0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.featureCol {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.featureCard {
+  background: rgba(2, 12, 27, 0.7);
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+              inset 0 0 0 1px rgba(100, 255, 218, 0.2);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #e6f1ff;
+  text-align: center;
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: #8892b0;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 4rem 0;
+  }
+
+  .featuresTitle {
+    font-size: 2rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .featuresTitle {
+    font-size: 1.75rem;
+  }
+
+  .featureCard {
+    padding: 1.25rem;
+  }
+
+  .featureIcon {
+    font-size: 2.5rem;
+  }
+
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+
+  .featureDescription {
+    font-size: 0.9rem;
+  }
+}

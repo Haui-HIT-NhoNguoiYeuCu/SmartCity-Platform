@@ -1,0 +1,392 @@
+@keyframes gradientBG {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+/* Tech theme background và page wrapper */
+.pageWrapper {
+  position: relative;
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  background-size: 200% 200%;
+  animation: gradientBG 6s ease infinite;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.pageWrapper::before {
+  content: '';
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  background: 
+    linear-gradient(90deg, #00f5ff11 1px, transparent 1px) 0 0 / 50px 50px,
+    linear-gradient(0deg, #00f5ff11 1px, transparent 1px) 0 0 / 50px 50px;
+  pointer-events: none;
+  animation: gridMove 1s linear infinite;
+}
+
+.pageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at top, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at bottom, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Split section với tech theme */
+.splitSection {
+  padding: 6rem 0;
+  color: #e6f1ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.techBg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.splitInner {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.splitLeft {
+  flex: 1 1 480px;
+  max-width: 640px;
+}
+
+.splitRight {
+  flex: 0 1 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Typography với tech theme */
+.splitHeading {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 1rem;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.splitText {
+  color: #8892b0;
+  margin-bottom: 1.6rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Buttons với tech theme */
+.splitButtons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Primary button với cyan gradient */
+.smallPrimary {
+  background: linear-gradient(90deg, #00f5ff 0%, #64ffda 100%);
+  color: #0a192f;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 245, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.smallPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 245, 255, 0.35);
+}
+
+/* Secondary button với glowing border */
+.smallSecondary {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid #64ffda;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+}
+
+.smallSecondary:hover {
+  background: rgba(100, 255, 218, 0.15);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Code card với tech theme */
+.codeCard {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(2, 12, 27, 0.7);
+  border-radius: 12px;
+  padding: 1.8rem;
+  color: #64ffda;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+              inset 0 0 0 1px rgba(100, 255, 218, 0.1);
+  position: relative;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.codeCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Stats row với tech theme */
+.statsRow {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  min-width: 120px;
+}
+
+.statNumber {
+  font-weight: 800;
+  color: #64ffda;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.statLabel {
+  color: #8892b0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .splitInner {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  .splitRight {
+    width: 100%;
+  }
+  .codeCard {
+    max-width: 100%;
+  }
+  .statsRow {
+    gap: 2rem;
+  }
+}
+
+/* Hover effects */
+.statItem:hover .statNumber {
+  color: #00f5ff;
+  transition: color 0.2s ease;
+}
+
+.codeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+              inset 0 0 0 1px rgba(100, 255, 218, 0.2);
+}
+
+/* Thêm vào file CSS hiện tại */
+.codeCard {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(2, 12, 27, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #64ffda;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+              inset 0 0 0 1px rgba(100, 255, 218, 0.1);
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cardHeader {
+  background: rgba(1, 8, 18, 0.8);
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.circles {
+  display: flex;
+  gap: 6px;
+}
+
+.circles span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.circles span:nth-child(1) {
+  background: #ff5f56;
+}
+
+.circles span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.circles span:nth-child(3) {
+  background: #27c93f;
+}
+
+.cardTitle {
+  color: #8892b0;
+  font-size: 0.85rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.promptLine {
+  display: flex;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.prompt {
+  color: #64ffda;
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: #e6f1ff;
+  animation: typing 2s steps(40, end);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.response {
+  color: #8892b0;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  animation-delay: 2s;
+  line-height: 1.6;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.codeCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(90deg, #64ffda 0%, #00f5ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
+.codeCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+              inset 0 0 0 1px rgba(100, 255, 218, 0.2);
+}
+
+.codeCard:hover::before {
+  animation: borderGlow 2s ease-in-out infinite;
+}
